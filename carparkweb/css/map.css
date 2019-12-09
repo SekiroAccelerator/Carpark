@@ -1,0 +1,13 @@
+#map{
+    margin:0 auto;
+    width: 800px;
+    height: 600px;
+}
+a.custom_marker{
+    text-decoration: none;
+    color: black;
+}
+a.custom_marker:hover{
+    text-decoration: tomato;
+    color:forestgreen;
+}
