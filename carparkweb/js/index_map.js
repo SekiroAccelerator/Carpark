@@ -10,7 +10,7 @@ function locationIpAndCreate(carParkArray) {
         if(this.getStatus() === BMAP_STATUS_SUCCESS){             //通过Geolocation类的getStatus（）可以判断是否已经成功定位
             var pt = position.point;    //获得定位的经纬度信息
             map = new BMap.Map("map");    //创建地图到ID元素容器
-            map.centerAndZoom(new BMap.Point(pt.lng, pt.lat), 12);  // 初始化地图,设置中心点坐标和地图级别
+            map.centerAndZoom(new BMap.Point(pt.lng, pt.lat), 13);  // 初始化地图,设置中心点坐标和地图级别
             setMapEvent();       //设置地图事件
             addMapControl();     //向地图添加控件
             addMapOverlay(carParkArray);     //向地图添加覆盖物
@@ -65,7 +65,7 @@ function addMapOverlay(carParkArray){
     for (let i = 0; i < carParkArray.length; i++) {
         if(carParkArray[i].type == 0){
             let carPark = {
-                content:"剩余："+carParkArray[i].rest+"个车位<br>价格："+carParkArray[i].price+"元/小时<br><a href='javascript:;' class='custom_marker'>到这里去</a>",
+                content:"剩余："+carParkArray[i].rest+"个车位<br>价格："+carParkArray[i].price+"元/小时",
                 title:""+carParkArray[i].name,
                 imageOffset: {width:0,height:-21},
                 position:{lat:carParkArray[i].lat,lng:carParkArray[i].lng}
@@ -73,7 +73,7 @@ function addMapOverlay(carParkArray){
             markers.push(carPark);
         }else{
             let carPark = {
-                content:"剩余："+carParkArray[i].rest+"个车位<br>价格："+carParkArray[i].price+"元/小时<br><a href='javascript:;' class='custom_marker'>到这里去</a>",
+                content:"剩余："+carParkArray[i].rest+"个车位<br>价格："+carParkArray[i].price+"元/小时",
                 title:""+carParkArray[i].name,
                 imageOffset: {width:-46,height:-21},
                 position:{lat:carParkArray[i].lat,lng:carParkArray[i].lng}
